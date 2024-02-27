@@ -1,0 +1,157 @@
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+}
+
+.kalvi-logo{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.book{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 210px;
+  border-radius: 9px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.title{
+  font-size: 12px;
+}
+
+.logo{
+  color: red;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search{
+  border: none;
+  border-radius: 6px;
+  width: 350px;
+  height: 24px;
+  font-weight: bold;
+  box-shadow:  0 0 9px rgba(0, 0, 0, 0.3);
+}
+
+.image{
+  width: 150px;
+  border-radius: 5px;
+}
+
+.register{
+  color: red;
+  background-color: white;
+  width: 120px;
+  height: 27px;
+}
+
+
+/* form css */
+
+body{
+  background-color: #ffd099;
+}
+
+.container2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.name,
+.email,
+.password,
+.repeat{
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.nameinput,
+.emailinput,
+.passwordinput,
+.repeatpass{
+  font-weight: bold;
+  width: 200px;
+  height: 26px;
+}
+
+.nameerror,
+.passerror,
+.repeaterror,
+.checkerror{
+  color: red;
+  font-weight: bold;
+}
+
+.box{
+  font-weight: bolder;
+}
+
+.sign{
+  background-color: blue;
+  border: none;
+  border-radius: 3px;
+  width: 200px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.success-message{
+  color: green;
+  font-weight: bolder;
+  font-size: 27px;
+}
+
+.form-box{
+  border: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+
+@media (max-width:616px) and (min-width:300px) {
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .search{
+    width: 200px;
+  }
+
+  .image{
+    width: 90px;
+  }
+
+  .book{
+    height: 260px;
+    width: 100px;
+  }
+
+  .register{
+    width: 60px;
+  }
+
+  .searchimage{
+    width: 100px;
+  }
+  .searchtitle{
+    font-size: 18px;
+  }
+}
