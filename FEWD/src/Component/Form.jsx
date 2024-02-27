@@ -13,6 +13,7 @@ function Form(){
     const handlerSub = (e) => {
         setState(true);
         console.log(e)
+        // consoling the user data
     };
 
     const handleChange = () => {
@@ -26,11 +27,14 @@ function Form(){
             </div>
             <div className='form-box'>
             <form onSubmit={handleSubmit(handlerSub)} onChange={handleChange}>
+                {/* success message for the user if signed in */}
             {state && <p className="success-message">Registration successful</p>}
              <div>
+                {/* input for name */}
                 <p className="name">Name</p>
                 <input type="text"
                 className='nameinput'
+                // condition for user name
                 placeholder="Your Name"
                 { ...register('YourName',{
                     required: true,
@@ -46,6 +50,7 @@ function Form(){
                 })
                 }/>
                 <div>
+                    {/* error message for name */}
                    <p className='nameerror'>{errors.YourName ? errors.YourName.message :null}</p> 
                 </div>
             </div>
@@ -54,6 +59,7 @@ function Form(){
                 <input type="email" 
                 className='emailinput'
                 placeholder="Your Email"
+                // input for email, and conditions for including '@' in the email
                 {...register('email',{
                     required:true,
                     validate:(value) => {
@@ -65,6 +71,7 @@ function Form(){
                 })}/>
             </div>
             <div>
+                {/* input for password */}
                 <p className='password'>Password</p>
                 <input type="password" 
                 className='passwordinput'
@@ -72,16 +79,19 @@ function Form(){
                 {...register('password',{
                     required:true,
                     pattern: {
+                        // for password including one special character
                         value: /^(?=.*[!@#$%^&*])[\w!@#$%^&*]{10,}$/,
                         message:'Password must be at least 10 characters with at least one special character',
                     },
                 })}/>
                 <div>
+                    {/* error message for password */}
                     <p className='passerror'>{errors.password ? errors.password.message :null}</p>
                     </div>
             </div>
 
             <div>
+                {/* input for repeat password */}
                 <p className='repeat'>Repeat your password</p>
                 <input type="password"
                 className='repeatpass'
@@ -93,6 +103,7 @@ function Form(){
                     }
                 })}/>
                 <div>
+                    {/* error message for repeat password */}
                     <p className='repeaterror'>{errors.repeatPassword ? errors.repeatPassword.message.message : null}</p>
                     </div>
             </div>
@@ -109,11 +120,13 @@ function Form(){
                 } />
                 <label className='box' htmlFor="agree">I agree all statements in Terms of service</label>
                 <div> 
+                    {/* error message for the checkbox */}
                     <p className='checkerror'>{errors.agree ? errors.agree.message : null}</p>
                     </div>
             </div>
 
             <div>
+                {/* sign up button */}
                 <button className='sign'>SIGN UP</button>
             </div>
             </form>

@@ -10,6 +10,7 @@ function Main(){
   const [state, setState] = useState([])
   const [bookSearched, setBookSearched] = useState([])
 
+  // fetching the API
   useEffect(() => {
     axios.get("https://reactnd-books-api.udacity.com/books",{ headers: { 'Authorization': 'whatever-you-want' }})
 
@@ -27,10 +28,14 @@ function Main(){
     })
   },[])
 
+  // for searching books
   const handleChange = (event) => {
+    // taking the user input and storing it
     const inputValue = event.target.value.toLowerCase();
+    // using filter function seperating the books based on the user input
     const filteredBook =state.filter(item =>item.title.toLowerCase().includes(inputValue));
     setBookSearched(filteredBook)
+    // updating it to booksearched 
   }
 
 
@@ -57,6 +62,7 @@ function Main(){
             onChange={handleChange} 
             
             />
+            {/* mapping out and showing the output for the searched book */}
             {bookSearched.map(item => (
                 <div key={item.id}>
                   <p>Searched Books</p>
@@ -66,10 +72,12 @@ function Main(){
             ) )}
         </div>
         <div>
+          {/* linked the register button to go to form page */}
             <Link to='/form' ><button className="register">Register</button></Link>
         </div>
         </div>
         <div className="container">
+          {/* showing the data from the API using map function */}
         {
             state.map(function(element){
             return (
